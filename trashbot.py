@@ -2,7 +2,6 @@
 
 # Import modules the script needs to work
 import praw
-import config
 import time
 from time import localtime, timezone
 from datetime import datetime as dt, timedelta as td, date, timezone
@@ -12,7 +11,7 @@ import traceback
 ### User defined variables section
 
 # Define the subreddit that you are working on.
-sub_name = "questions"
+sub_name = "YOUR_SUBREDDIT"
 
 # Set this number anywhere from 1-1000.  This is how many posts the bot will check each pass.
 posts_to_check = 500
@@ -36,11 +35,11 @@ def reddit_login():
     print("Connecting to reddit...")
     try:
         reddit = praw.Reddit(
-            client_id=config.client_id,
-            client_secret=config.client_secret,
+            client_id='',
+            client_secret='',
             user_agent=f"Post Quality Monitor Bot for /r/{sub_name} by u/buckrowdy - v0.1 ",
-            username=config.username,
-            password=config.password,
+            username='',
+            password='',
         )
 
     except Exception as e:
